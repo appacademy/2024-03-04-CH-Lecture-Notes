@@ -15,5 +15,4 @@ Listed below are some useful resources, be sure to check them out. This list of 
 ### Additional Resources:
 - [CH March 2024 Cohort Calendar](https://docs.google.com/spreadsheets/d/1NRIhwj4JfW31NWu-Dh70mOWGCtfJqaSQUt_q7lGMHZ4/edit#gid=0)
 - [Ruby docs](https://ruby-doc.org/core-2.7.0/index.html#classes)
-- [RSpec docs](https://relishapp.com/rspec/)
 - [MDN Javascript docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
