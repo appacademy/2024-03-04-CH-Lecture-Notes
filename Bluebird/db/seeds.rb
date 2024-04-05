@@ -21,14 +21,14 @@ ActiveRecord::Base.connection.reset_pk_sequence!('users')
 paloma = User.create!(
   username: "awesome_person", 
   email: "awesome_person@email.com", 
-  age: 30, 
+  age: 10, 
   political_affiliation: "JavaScript"
 )
 
 valerie = User.create!(
   username: "valerous", 
   email: "valerous@email.com", 
-  age: 30, 
+  age: 15, 
   political_affiliation: "Ruby"
 )
 
@@ -56,42 +56,42 @@ cathy = User.create!(
 raz = User.create!(
   username: "squirelly", 
   email: "squirelly@email.com", 
-  age: 30, 
+  age: 40, 
   political_affiliation: "JavaScript"
 )
 
 david = User.create!(
   username: "talk_to_the_hand", 
   email: "talk_to_the_hand@email.com", 
-  age: 30, 
+  age: 50, 
   political_affiliation: "Ruby"
 )
 
 justin = User.create!(
   username: "justin_gets_buckets", 
   email: "justin_gets_buckets@email.com", 
-  age: 30, 
+  age: 44, 
   political_affiliation: "JavaScript"
 )
 
 brad = User.create!(
   username: "beep_boop", 
   email: "beep_boop@email.com", 
-  age: 30, 
+  age: 300, 
   political_affiliation: "C++"
 )
 
 greta = User.create!(
   username: "adventursaurus", 
   email: "adventursaurus@email.com", 
-  age: 30, 
+  age: 1, 
   political_affiliation: "JavaScript"
 )
 
 big_company = User.create!(
   username: "instructors_rock", 
   email: "instructors_rock@email.com", 
-  age: 30, 
+  age: 89, 
   political_affiliation: "Instructors"
 )
 

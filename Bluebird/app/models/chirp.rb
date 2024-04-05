@@ -29,19 +29,117 @@ class Chirp < ApplicationRecord
         foreign_key: :chirp_id,
         class_name: :Like
 
+    has_many :likers,
+        through: :likes,
+        source: :liker
+
     # phase 3
 
     #Find all chirps for a particular user
+    # User.find_by(username: "catz").chirps
+
+    # Chirp
+    #     .joins(:author)
+    #     .where("users.username = 'catz'")
+
+    # Chirp
+    #     .joins(:users)
+    #     .where(users: {username: "catz"})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     #Find all chirps liked by people politically affiliated with JavaScript
+    # Chirp
+    #     .joins(:likers)
+    #     .where("users.political_affiliation = 'JavaScript'")
+
+
+
+
+
+
+
+
+
+
+
 
     #Get only the unique values from the previous query
+    # Chirp
+    #     .joins(:likers)
+    #     .where("users.political_affiliation = 'JavaScript'")
+    #     .distinct
+
+
+
+
+
+
+
+
 
     #Find all chirps with no likes
+    # Chirp
+    #     .left_outer_joins(:likes)
+    #     .where(likes: {id: nil})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     #Find how many likes each chirp has
+    # Chirp
+    #     .select(:id, :body, "COUNT(*) as num_likes")
+    #     .joins(:likes)
+    #     .group(:id)
+
+
+
+
+
+
+
+
+
     
     #Find chirps with at least 3 likes
+    # Chirp
+    #     .select(:id, :body, "COUNT(*) as num_likes")
+    #     .joins(:likes)
+    #     .group(:id)
+    #     .having("COUNT(*) >= 3")
+
+
+
+
+
+
 
 
     # Includes #
