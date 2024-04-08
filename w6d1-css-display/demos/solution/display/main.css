@@ -1,0 +1,46 @@
+
+div {
+  border: 10px solid green;
+  background: pink;
+  width: 40%;
+  height: 100px;
+  /* display: none; */
+}
+
+section{
+  border: 1px solid red;
+  /* width: 400px; */
+}
+
+section div {
+  background: turquoise;
+  width: 300px;
+  margin: 20px auto;
+  /* margin: vertical-margin horizontal-margin*/
+  padding: 20px 10px;
+}
+
+p{
+  border: 1px solid green;
+  width: 75%;
+  margin: 20px auto;
+}
+
+span {
+  background: cornflowerblue;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.inline-block-demo {
+  display: inline-block;
+  background: orange;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+
+section div:first-child {
+  border-radius: 20px;
+  height: 300px;
+}
