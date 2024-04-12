@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # delete '/chirps/:id', to: 'chirps#destroy'
 
   resources :chirps
+  resources :users
 
   # resources :chirps, only: [:index, :show, :create, :update, :destroy]
 
