@@ -22,77 +22,88 @@ paloma = User.create!(
   username: "awesome_person", 
   email: "awesome_person@email.com", 
   age: 10, 
-  political_affiliation: "JavaScript"
+  political_affiliation: "JavaScript",
+  password: "password"
 )
 
 valerie = User.create!(
   username: "valerous", 
   email: "valerous@email.com", 
   age: 15, 
-  political_affiliation: "Ruby"
+  political_affiliation: "Ruby",
+  password: "password"
 )
 
 daniel = User.create!(
   username: "dan_the_man", 
   email: "dan_the_man@email.com", 
   age: 30, 
-  political_affiliation: "Ruby"
+  political_affiliation: "Ruby",
+  password: "password"
 )
 
 megan = User.create!(
   username: "the_wizard", 
   email: "the_wizard@email.com", 
   age: 30, 
-  political_affiliation: "CSS"
+  political_affiliation: "CSS",
+  password: "password"
 )
 
 cathy = User.create!(
   username: "catz", 
   email: "catz@email.com", 
   age: 30, 
-  political_affiliation: "Ruby"
+  political_affiliation: "Ruby",
+  password: "password"
 )
 
 raz = User.create!(
   username: "squirelly", 
   email: "squirelly@email.com", 
   age: 40, 
-  political_affiliation: "JavaScript"
+  political_affiliation: "JavaScript",
+  password: "password"
 )
 
 david = User.create!(
   username: "talk_to_the_hand", 
   email: "talk_to_the_hand@email.com", 
   age: 50, 
-  political_affiliation: "Ruby"
+  political_affiliation: "Ruby",
+  password: "password"
 )
 
 justin = User.create!(
   username: "justin_gets_buckets", 
   email: "justin_gets_buckets@email.com", 
   age: 44, 
-  political_affiliation: "JavaScript"
+  political_affiliation: "JavaScript",
+  password: "password"
 )
 
 brad = User.create!(
   username: "beep_boop", 
   email: "beep_boop@email.com", 
   age: 300, 
-  political_affiliation: "C++"
+  political_affiliation: "C++",
+  password: "password"
 )
 
 greta = User.create!(
   username: "adventursaurus", 
   email: "adventursaurus@email.com", 
   age: 1, 
-  political_affiliation: "JavaScript"
+  political_affiliation: "JavaScript",
+  password: "password"
 )
 
 big_company = User.create!(
   username: "instructors_rock", 
   email: "instructors_rock@email.com", 
   age: 89, 
-  political_affiliation: "Instructors"
+  political_affiliation: "Instructors",
+  password: "password"
 )
 
 

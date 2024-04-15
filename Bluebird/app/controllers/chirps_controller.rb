@@ -1,12 +1,11 @@
 class ChirpsController < ApplicationController
     def index
-        @chirps = Chirp.all # [ChirpInstance1, ChirpInstance2, etc]
+        @chirps = Chirp.all
         render json: @chirps
     end
 
     def show
         @chirp = Chirp.find(params[:id])
-        # Chirp.find_by(id: 1)
         render json: @chirp
     end
 
@@ -14,10 +13,10 @@ class ChirpsController < ApplicationController
         @chirp = Chirp.new(chirp_params)
         @chirp.author = User.first
 
-        if @chirp.save # save vs. save!
+        if @chirp.save
             redirect_to chirp_url(@chirp)
         else
-            render json: @chirp.errors.full_messages, status: :unprocessable_entity # 422
+            render json: @chirp.errors.full_messages, status: :unprocessable_entity
         end
     end
 
@@ -42,6 +41,5 @@ class ChirpsController < ApplicationController
     private
     def chirp_params
         params.require(:chirp).permit(:body)
-        # { chirp: { body: ... } }
     end
 end

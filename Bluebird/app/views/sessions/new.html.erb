@@ -1,0 +1,14 @@
+<h2>Login</h2>
+
+<form action="<%= session_url %>" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="user[username]" value="<%= @user.username %>">
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="user[password]" value="">
+    <br>
+
+    <input type="submit" value="Login">
+
+</form>

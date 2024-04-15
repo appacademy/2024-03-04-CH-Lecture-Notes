@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :chirps
   resources :users
+  resource :session, only: [:new, :create, :destroy]
 
   # resources :chirps, only: [:index, :show, :create, :update, :destroy]
 
