@@ -1,0 +1,7 @@
+<h1>Create new chirp</h1>
+<form action="<%= chirps_url %>" method="POST">
+    <%= auth_token %>
+    body: <input type="text" name="chirp[body]">
+    <br>
+    <input type="submit" value="Create Post">
+</form>

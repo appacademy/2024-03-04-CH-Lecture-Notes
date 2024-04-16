@@ -1,7 +1,8 @@
 class ChirpsController < ApplicationController
     def index
         @chirps = Chirp.all
-        render json: @chirps
+        # render json: @chirps
+        render :index
     end
 
     def show
@@ -9,12 +10,14 @@ class ChirpsController < ApplicationController
         render json: @chirp
     end
 
+    def new
+    end
+
     def create
         @chirp = Chirp.new(chirp_params)
-        @chirp.author = User.first
-
+        @chirp.author = current_user
         if @chirp.save
-            redirect_to chirp_url(@chirp)
+            redirect_to chirps_url
         else
             render json: @chirp.errors.full_messages, status: :unprocessable_entity
         end

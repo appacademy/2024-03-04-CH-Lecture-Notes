@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
 
     def destroy
         logout!
+        flash[:messages] = ["Successfully logged out"]
         redirect_to new_session_url
     end
 end
