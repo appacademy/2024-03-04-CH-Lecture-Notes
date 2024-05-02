@@ -7,11 +7,62 @@
 #  email                 :string           not null
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
-#  political_affiliation :string           not null
-#  age                   :integer          not null
+#  age                   :integer
+#  political_affiliation :string
+#  password_digest       :string           not null
+#  session_token         :string           not null
 #
 class User < ApplicationRecord
-    validates :username, :email, presence: true, uniqueness: true
+
+# + Within User Class
+# + F => ::find_by_credentials(username, password)
+# + I => #is_password?(password)
+# + G => #generate_session_token
+# + V => #validations
+# + A => #attr_reader :password
+# + P => #password=(password)
+# + E => #ensure_session_token
+# + B => #before_validation (ensure_session_token)
+# + R => #reset_session_token!
+
+    before_validation :ensure_session_token
+
+    validates :username, :email, :session_token, presence: true, uniqueness: true
+    validates :password_digest, presence: true
+
+    validates :password, length: { minimum: 6 }, allow_nil: true
+
+    attr_reader :password
+
+    def self.find_by_credentials(username, password)
+        user = User.find_by(username: username)
+
+        if user && user.is_password?(password) # User#is_password?
+            user
+        else
+            nil
+        end
+    end
+
+    def is_password?(password) # User#is_password?
+        password_object = BCrypt::Password.new(self.password_digest)
+        password_object.is_password?(password)  # BCrypt#is_password?
+    end
+
+    def password=(password)
+        @password = password
+        self.password_digest = BCrypt::Password.create(password)
+    end
+
+    def ensure_session_token
+        self.session_token ||= SecureRandom::urlsafe_base64
+    end
+
+    def reset_session_token!
+        self.session_token = SecureRandom::urlsafe_base64
+        self.save!
+        self.session_token
+    end
 
     has_many :chirps,
         primary_key: :id,
@@ -26,6 +77,7 @@ class User < ApplicationRecord
     has_many :liked_chirps,
         through: :likes,
         source: :chirp
+
 
     # Phase 1
     #Get first user record, use first

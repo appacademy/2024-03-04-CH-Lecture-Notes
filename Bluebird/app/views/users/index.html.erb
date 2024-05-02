@@ -1,0 +1,13 @@
+<h1>Here's all our users:</h1>
+<ul>
+    <% @users.each do |ele| %>
+        <li>
+            <%# <ul> %>
+                <%# <li><%= user.username %>
+                <%# <li><%= user.age %>
+                <%# <li><%= user.email %>
+            <%# </ul> %>
+            <%= render 'user', user: ele, action: :index %>
+        </li>
+    <% end %>
+</ul>
