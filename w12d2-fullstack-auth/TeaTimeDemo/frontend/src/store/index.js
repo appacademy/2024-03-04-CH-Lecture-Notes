@@ -3,11 +3,13 @@ import logger from 'redux-logger';
 import { thunk } from 'redux-thunk';
 
 import teaReducer from './teaReducer';
+import usersReducer from './usersReducer';
 
 // const dummyReducer = (state, action) => (state);
 
 const rootReducer = combineReducers({
-    teas: teaReducer
+    teas: teaReducer,
+    users: usersReducer
 });
 
 const configureStore = (preloadedState = {}) => {
